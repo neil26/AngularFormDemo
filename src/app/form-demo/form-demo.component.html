@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sample Form </h1>
+    <form [formGroup]="sampleForm">
+    <label for="Name"> Name : </label><input type="text" formControlName="name"><br/><br/>
+    <label style="color:red;font-style: bold;" *ngIf="sampleForm.controls['name'].touched &&sampleForm.controls['name'].invalid">Please Enter Valid Name<br/><br/></label>
+    <label for="Age"> Age : </label><input type="text" formControlName="age"><br/><br/>
+    <label style="color:red;font-style: bold;" *ngIf="sampleForm.controls['age'].touched &&sampleForm.controls['age'].invalid">Please Enter Valid age<br/><br/></label>
+    <label for="ContactNo"> Contact Number : </label><input type="text" formControlName="contact"><br/><br/>
+    <label style="color:red;font-style: bold;" *ngIf="sampleForm.controls['contact'].touched &&sampleForm.controls['contact'].invalid">Please Enter 10 Digit Number<br/><br/></label>
+    <label for="Email">Email : </label><input type="text" formControlName="email"><br/><br/>
+    <label style="color:red;font-style: bold;" *ngIf="sampleForm.controls['email'].touched &&sampleForm.controls['email'].invalid">Please Enter Valid E-Mail<br/><br/></label>
+    <button (click)="LogData()"[disabled]="!sampleForm.valid">Click</button>
+</form>
+</body>
+</html>
